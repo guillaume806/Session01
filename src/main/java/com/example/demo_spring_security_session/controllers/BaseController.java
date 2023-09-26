@@ -17,8 +17,9 @@ public class BaseController {
     public String getHomePage(HttpServletRequest request) {
         HttpSession session = request.getSession();
         session.setAttribute("user", "johnny");
+        session.setAttribute("password", "deep");
 
-        return "home";
+        return "/home";
     }
 
 
@@ -30,10 +31,10 @@ public class BaseController {
             session.setAttribute("utilisateurConnecte", true);
 
 
-            return "redirect:/private/secret";
+            return "redirect:/private/secrets";
         } else {
 
-            return "redirect:/form";
+            return "/form";
         }
     }
 
